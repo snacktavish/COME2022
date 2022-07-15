@@ -63,7 +63,7 @@ We will add these sequences to an existing core genome alignment generated using
 
 
 
-** The updated allignemnt is in  FILE TODO**
+** The updated allignment is in  FILE TODO**
 
 The  ML tree file will be in the file `EP_demo_1/RESULTS/RAxML_bestTree.consensusFULL`
 
