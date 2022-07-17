@@ -92,7 +92,6 @@ Look up the two closest relatives of the new lineage with known AMR genes in htt
 The reference that you choose can affect your consensus sequence calling, and therefore your phylogenetic inference. Lets see what happens if we try assembling these new taxa, but using the outgroup as a reference instead.
 
 
-
 The consensus aligned sequence for each run is saved in alternate_reference/seqname_align.fas (Where 'seqname' is the filename stub of the reads).
 
 
@@ -101,13 +100,13 @@ In your pre-workshop exercises, you developed a script to compare sequences in f
 Use that script now to investigate how these sequences differ !
 
 
-**Q Does changing the reference taxon change the sequences?**
+**Q Does changing the reference taxon change the inferred sequences?**
 
 
-**Q Are consensus sequences from differnet taxa ?**
+**Q What do the differences in the sequences consist of (in terms of different base calls)?**
 
 
-We can then combine the previous extended alignemnt with these new, slightly different consensus sequence estimates.
+We can then combine the previous extended alignment with these new, slightly different consensus sequence estimates.
 
 Open each of the consensus sequences from the alternate reference in a text editor, and rename them to reflect that you used an alternate reference.
 
@@ -116,7 +115,7 @@ e.g. change ">SRR19310037" to  ">SRR19310037_alt"
 Because they are already aligned, we can just concateneate them to form an alignment that includes both our original consesuses for these taxa, and these new inferences.
 
 
-    cat EP_demo_1/RESULTS/extended.aln EP_demo_alternate_ref/combine_and_infer/SRR19310037_align.fas EP_demo_alternate_ref/combine_and_infer/SRR19310038_align.fas EP_demo_alternate_ref/combine_and_infer/SRR19127720_align.fas > combined_refs.fas
+    cat EP_demo/RESULTS/extended.aln EP_demo_alternate_ref/combine_and_infer/SRR19310037_align.fas EP_demo_alternate_ref/combine_and_infer/SRR19310038_align.fas EP_demo_alternate_ref/combine_and_infer/SRR19127720_align.fas > combined_refs.fas
 
 
 We can then estimate a tree on this updated alignment - e.g. using RAxML (or any other phylogenetic inference software)
