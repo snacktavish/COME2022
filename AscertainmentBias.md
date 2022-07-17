@@ -24,42 +24,40 @@ The alignment is in the file asc_bias_exercise/sim_noasc.phy, and estimate a tre
 
 Depending on your version of raxml, run either:
 
-   raxmlHPC -m GTRGAMMA -p 2 -s  sim_noasc.phy -n  no_asc_bias 
-
-or 
-
-    raxml-ng -model GTR+G -msa  sim_noasc.phy
 
 
+    raxml-ng -model GTR+G -msa all_sites.fas --prefix all_sites
+OR 
+    raxmlHPC -m GTRGAMMA -p 2 -s  all_sites.fas -n all_sites
 
 
-Open the ML tree in a tree viewer 
-Compare the topology of the best tree estimate to the true tree.
+Open the ML tree (all_sites.raxml.bestTree) in a tree viewer or text editor.
+Compare the topology of the best tree estimate to the true tree. 
 
 **Q. Did you estimate the correct topology?**
 
-**Q. How do the branch lengths compare to the true tree (sim.tre)?**
+**Q. How do the branch lengths compare to the true tree (true_tree.tre)?**
 
 Now lets run that same analysis on only the variable sites from that alignment, sim_variablesites.phy. This is the exact same alignment, but with the invariant columns removed.
 
 
-    raxml-ng -model GTR+G -msa  sim_variablesites.phy
+    raxml-ng -model GTR+G -msa  variable_sites.fas -prefix asc_uncorrected
 OR
-    raxmlHPC -m GTRGAMMA -p 2 -s sim_variablesites.phy -n asc_uncorrected
+    raxmlHPC -m GTRGAMMA -p 2 -s variable_sites.fas -n asc_uncorrected
 
 
 **Q. Did you get the correct topology?**
-**Q. How do the branch lengths compare to the true tree (sim.tre)**
+**Q. How do the branch lengths compare to the true tree**
 
 
 Lets bootstrap it!
 
 
-    raxml-ng -model GTR+G -msa  sim_variablesites.phy -bootstrap 100
-    raxml-ng --support --tree variable_sites.raxml.bestTree --bs-trees variable_sites.raxml.bootstraps
+    raxml-ng -model GTR+G -msa  variable_sites.fas -bootstrap 100 -prefix asc_uncorrected
+    raxml-ng --support --tree asc_uncorrected.raxml.bestTree --bs-trees asc_uncorrected.raxml.bootstraps
 
 OR 
-    raxmlHPC -m GTRGAMMA -p 123 -# 100 -b 123 -s sim_variablesites.phy -n asc_uncorr_boot
+    raxmlHPC -m GTRGAMMA -p 123 -# 100 -b 123 -s variable_sites.fas -n asc_uncorr_boot
     raxmlHPC -m GTRGAMMA -f b -t RAxML_bestTree.asc_uncorrected -z RAxML_bootstrap.asc_uncorr_boot -n asc_uncorr_bipart
 
 
@@ -69,18 +67,22 @@ OR
 
 **Q: Is that bipartition in the true tree?**
 
-However, even if you only have the variable sites, by using an appropriate model of evolution, it is possible to rescue your analysis. In RAxML you can you a model corrected for ascertainment bias by using a model corrected for these known biases. We will use th ASC_GTRGAMMA model, with the lewis (as in Paul Lewis) correction for discarding sites that don't vary in the alignment.
+However, even if you only have the variable sites, by using an appropriate model of evolution, it is possible to rescue your analysis. In RAxML you can apply a model corrected for these known biases. We will use th ASC_GTRGAMMA model, with the lewis (as in Paul Lewis) correction for discarding sites that don't vary in the alignment.
 
-
-    raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -s datafiles/sim_variablesites.phy -n asc_corrected
+    raxml-ng -model GTR+G+ASC_LEWIS -msa variable_sites.fas --prefix corrected
+OR
+    raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -s datafiles/sim_variablesites.phy -n corrected
 
 
 **Q: Did you get the correct tree?**
 
 Bootstrap it!
 
-    raxml-ng -model GTR+G -msa  sim_variablesites.phy -bootstrap 100
+    raxml-ng --model GTR+G+ASC_LEWIS --msa  variable_sites.fas --msa-format fasta --bootstrap --prefix corrected
+    raxml-ng --support --tree corrected.raxml.bestTree --bs-trees corrected.raxml.bootstraps
 
+
+OR
 
    raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -# 100 -b 123 -s datafiles/sim_variablesites.phy -n asc_corr_boot
    raxmlHPC -m ASC_GTRGAMMA -f b -t RAxML_bestTree.asc_corrected -z RAxML_bootstrap.asc_corr_boot -n asc_corr_bipart
@@ -89,50 +91,51 @@ Bootstrap it!
 **Q: What is the bootstrap support for the one bipartition in the tree?**
 **Q: Is that bipartition in the true tree?**
 
-This is the exact same dataset! If our model of evolution is not appropriate for our data, our results can be systematically biased. Incorrect inferences can have 100% bootstrap support, because sampling across our data does not capture the problem.
+If our model of evolution is not appropriate for our data, our results can be systematically biased. Incorrect inferences can have 100% bootstrap support, because sampling across our data does not capture the problem.
 NOTE: The ascertainment bias corrections in RAxML will not run if there are ANY invariant columns in your alignment.
 
 ## Part 2: Exploring statements of homology
 
-Open each of the two data files (sim_noasc, and sim_variable sites) in seaview.
+To speed thinsg up for this example we will use truncated versions of the sequence files from the exercise above,  (all_sites_mini.fas, and variable_sites_mini.fas)
+Open each of the two data files (all_sites_mini.fas, and variable_sites_mini.fas) in seaview.
 
 Take a look at where the sites in the variable file from from in the full alignment.
 
-**Q: What is the location of the first eight variable sites in the full alignment?**
+**Q: What is the location of the first four variable sites in the full alignment?**
+
 
 This data is already correctly aligned, based on the simulation, but we can see what 'aligning' it does.
 
-Use muscle to align the data in the full alignment. 
-```
-muscle -in sim_noasc.fas -out sim_noasc_align.fas
-```
+Use seaview to look at the data in the full alignment. 
 
-**Q: Did the alignment change?**
+**Q: How does the alignment look to you?**
 
-Estimate the tree using this new alignemnt.
+(you could use an aligner to 're-align' this data set - but it takes a while and doesn't do anything)
 
-**Q: Did the ML tree change?**
 
+What happens if you align
 Use muscle to align the data in the variable sites alignment. 
-```
-muscle -in sim_variablesites.fas -out sim_variablesites_realign.fas
-```
+
+    muscle -in variable_sites_mini.fas -out variable_sites_realign.fas
+
 
 **Q: Did the alignment change?**
 
 
-Open the full alignment (sim_noasc.phy) in seaview.
+Open the full alignment (all_sites_mini.fas) in seaview.
 
-Use the space bar to add gaps, and the delete key to remove them.
+
 Align the sequences to capture the same homology statement that is made by the first two variable site in the "sim_variablesites_realign.fas".
-NOTE: the taxa may be re-ordered in the estmated alignment. You can try the hand alignment with them re-ordered, but it is easier if you put them back in A,B,C,D order first using a text editor. (Presumably you can re-order them in seaview, but I don't know how)
+Use the space bar to add gaps, and the delete key to remove them.
+NOTE: the taxa may be re-ordered in the estimated alignment. You can try the hand alignment with them re-ordered, but it is easier if you put them back in A,B,C,D order first using a text editor. 
+(Presumably you can re-order them in seaview, but I don't know how)
 
 
-**Q: How do these homology statements look?**
+**Q: How does aligning the variable sites change the overall homology statements?**
 
 
-Estimate the ML tree using this new alignemnt.
+Estimate the ML tree using this new alignment.
 
 **Q: Do you get the correct tree? Do you expect to?**
 
-
+Be careful of what you are aligning!!
