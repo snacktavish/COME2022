@@ -1,8 +1,8 @@
 [bwa_index] Pack FASTA... 0.01 sec
-init ticks = 79526781
+init ticks = 78170039
 ref seq len = 999898
-binary seq ticks = 19519760
-build index ticks = 126201218
+binary seq ticks = 18094896
+build index ticks = 121680252
 ref_seq_len = 999898
 count = 0, 233080, 499949, 766818, 999898
 BWT[622839] = 4
@@ -16,25 +16,25 @@ CP_SHIFT = 6, CP_MASK = 63
 sizeof CP_OCC = 64
 max_occ_ind = 15623
 Extensiphy directory is /home/ejmctavish/projects/McTavishLab/extensiphy/modules
-Alignment is /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
+Alignment is /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
 num threads is
 2
-master dir == /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo
+master dir == /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh
 tail_1 is _1.fastq
 tail_2 is _2.fastq
 Argument out is SRR19127720output_dir
 Argument name is QUERY
 Argument threads is 2
 Extensiphy directory is /home/ejmctavish/projects/McTavishLab/extensiphy/modules
-Alignment is /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
+Alignment is /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
 num threads is
 2
-master dir == /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo
-Performing full mapping of reads to all sequences in alignment
+master dir == /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh
 tail_1 is _1.fastq
 tail_2 is _2.fastq
 Argument out is SRR19310037output_dir
 Argument name is QUERY
+Performing full mapping of reads to all sequences in alignment
 Argument threads is 2
 Performing full mapping of reads to all sequences in alignment
 basename is SRR19127720
@@ -54,79 +54,79 @@ Running in Paired-End Mode
 -----------------------------
 Executing in AVX2 mode!!
 -----------------------------
-Ref file: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
+Ref file: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
 Entering FMI_search
 reference seq len = 999899
 -----------------------------
 Executing in AVX2 mode!!
 -----------------------------
-Ref file: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
+Ref file: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
 Entering FMI_search
 reference seq len = 999899
 count
+0,	1
+1,	233081
+2,	499950
+3,	766819
+4,	999899
+
+Reading other elements of the index from files /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
+prefix: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
+[M::bwa_idx_load_ele] read 0 ALT contigs
+Done reading Index!!
+Reading reference genome..
+Binary seq file = /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas.0123
+Reference genome size: 999898 bp
+Done readng reference genome !!
+
+[0000] 1: Calling process()
+
+Threads used (compute): 2
+Info: projected #read in a task: 132460
+------------------------------------------
+Memory pre-allocation for chaining: 278.6958 MB
+Memory pre-allocation for BSW: 479.2340 MB
+Memory pre-allocation for BWT: 154.6284 MB
+------------------------------------------
+No. of pipeline threads: 2
 count
 0,	1
-0,	1
-1,	233081
 1,	233081
 2,	499950
-2,	499950
-3,	766819
 3,	766819
 4,	999899
-4,	999899
 
-
-Reading other elements of the index from files /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
-Reading other elements of the index from files /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
-prefix: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
-prefix: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
-[M::bwa_idx_load_ele] read 0 ALT contigs
+Reading other elements of the index from files /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
+prefix: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
 [M::bwa_idx_load_ele] read 0 ALT contigs
 Done reading Index!!
-Done reading Index!!
 Reading reference genome..
-Reading reference genome..
-Binary seq file = /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas.0123
-Binary seq file = /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas.0123
-Reference genome size: 999898 bp
+Binary seq file = /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas.0123
 Reference genome size: 999898 bp
 Done readng reference genome !!
 
-Done readng reference genome !!
-
-[0000] 1: Calling process()
 [0000] 1: Calling process()
 
 Threads used (compute): 2
-
-Threads used (compute): 2
-Info: projected #read in a task: 132460
 Info: projected #read in a task: 132460
 ------------------------------------------
-------------------------------------------
-Memory pre-allocation for chaining: 278.6958 MB
 Memory pre-allocation for chaining: 278.6958 MB
 Memory pre-allocation for BSW: 479.2340 MB
-Memory pre-allocation for BSW: 479.2340 MB
-Memory pre-allocation for BWT: 154.6284 MB
 Memory pre-allocation for BWT: 154.6284 MB
 ------------------------------------------
-------------------------------------------
 No. of pipeline threads: 2
-No. of pipeline threads: 2
-[0000] read_chunk: 20000000, work_chunk_size: 20000091, nseq: 82958
 [0000] read_chunk: 20000000, work_chunk_size: 20000025, nseq: 84810
-	[0000][ M::kt_pipeline] read 82958 sequences (20000091 bp)...
-[0000] 2. Calling mem_process_seqs.., task: 0
-[0000] 3. Calling kt_for - worker_bwt
 	[0000][ M::kt_pipeline] read 84810 sequences (20000025 bp)...
 [0000] 2. Calling mem_process_seqs.., task: 0
 [0000] 3. Calling kt_for - worker_bwt
-[0000] read_chunk: 20000000, work_chunk_size: 20000074, nseq: 82886
-	[0000][ M::kt_pipeline] read 82886 sequences (20000074 bp)...
+[0000] read_chunk: 20000000, work_chunk_size: 20000091, nseq: 82958
+	[0000][ M::kt_pipeline] read 82958 sequences (20000091 bp)...
+[0000] 2. Calling mem_process_seqs.., task: 0
+[0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000342, nseq: 84808
 	[0000][ M::kt_pipeline] read 84808 sequences (20000342 bp)...
+[0000] read_chunk: 20000000, work_chunk_size: 20000074, nseq: 82886
+	[0000][ M::kt_pipeline] read 82886 sequences (20000074 bp)...
 [0000] 3. Calling kt_for - worker_aln
 [0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 84810
@@ -156,12 +156,12 @@ Inferring insert size distribution from data, l_pac: 499949, n: 82958
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [M::mem_pestat] skip orientation FF
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84810 reads in 6.000 CPU sec, 2.959 real sec
+	[0000][ M::mem_process_seqs] Processed 84810 reads in 7.467 CPU sec, 3.767 real sec
 [0000] 2. Calling mem_process_seqs.., task: 1
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000253, nseq: 84748
 	[0000][ M::kt_pipeline] read 84748 sequences (20000253 bp)...
-	[0000][ M::mem_process_seqs] Processed 82958 reads in 6.645 CPU sec, 3.271 real sec
+	[0000][ M::mem_process_seqs] Processed 82958 reads in 8.801 CPU sec, 4.461 real sec
 [0000] 2. Calling mem_process_seqs.., task: 1
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000201, nseq: 82860
@@ -200,17 +200,16 @@ Inferring insert size distribution from data, l_pac: 499949, n: 82886
 [M::mem_pestat] skip orientation FF
 [M::mem_pestat] skip orientation RR
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84808 reads in 6.074 CPU sec, 2.941 real sec
+	[0000][ M::mem_process_seqs] Processed 84808 reads in 9.712 CPU sec, 4.946 real sec
 [0000] 2. Calling mem_process_seqs.., task: 2
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000269, nseq: 84756
 	[0000][ M::kt_pipeline] read 84756 sequences (20000269 bp)...
-	[0000][ M::mem_process_seqs] Processed 82886 reads in 6.696 CPU sec, 3.292 real sec
+	[0000][ M::mem_process_seqs] Processed 82886 reads in 12.104 CPU sec, 6.480 real sec
 [0000] 2. Calling mem_process_seqs.., task: 2
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000249, nseq: 82816
 	[0000][ M::kt_pipeline] read 82816 sequences (20000249 bp)...
-[0000] 3. Calling kt_for - worker_aln
 [0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 84748
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (1, 9804, 5, 7)
@@ -223,7 +222,8 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84748
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84748 reads in 6.362 CPU sec, 3.116 real sec
+[0000] 3. Calling kt_for - worker_aln
+	[0000][ M::mem_process_seqs] Processed 84748 reads in 13.343 CPU sec, 6.806 real sec
 [0000] 2. Calling mem_process_seqs.., task: 3
 [0000] 3. Calling kt_for - worker_bwt
 Inferring insert size distribution from data, l_pac: 499949, n: 82860
@@ -244,7 +244,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 82860
 [0000] 10. Calling kt_for - worker_sam
 [0000] read_chunk: 20000000, work_chunk_size: 20000190, nseq: 84704
 	[0000][ M::kt_pipeline] read 84704 sequences (20000190 bp)...
-	[0000][ M::mem_process_seqs] Processed 82860 reads in 6.786 CPU sec, 3.340 real sec
+	[0000][ M::mem_process_seqs] Processed 82860 reads in 14.125 CPU sec, 6.985 real sec
 [0000] 2. Calling mem_process_seqs.., task: 3
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000327, nseq: 82740
@@ -261,10 +261,10 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84756
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-[0000] 3. Calling kt_for - worker_aln
-	[0000][ M::mem_process_seqs] Processed 84756 reads in 7.775 CPU sec, 3.289 real sec
+	[0000][ M::mem_process_seqs] Processed 84756 reads in 11.244 CPU sec, 5.500 real sec
 [0000] 2. Calling mem_process_seqs.., task: 4
 [0000] 3. Calling kt_for - worker_bwt
+[0000] 3. Calling kt_for - worker_aln
 [0000] read_chunk: 20000000, work_chunk_size: 20000433, nseq: 84664
 	[0000][ M::kt_pipeline] read 84664 sequences (20000433 bp)...
 Inferring insert size distribution from data, l_pac: 499949, n: 82816
@@ -283,12 +283,12 @@ Inferring insert size distribution from data, l_pac: 499949, n: 82816
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 14317)
 [M::mem_pestat] skip orientation RR
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 82816 reads in 9.122 CPU sec, 3.953 real sec
+[0000] 3. Calling kt_for - worker_aln
+	[0000][ M::mem_process_seqs] Processed 82816 reads in 14.076 CPU sec, 6.996 real sec
 [0000] 2. Calling mem_process_seqs.., task: 4
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000101, nseq: 82700
 	[0000][ M::kt_pipeline] read 82700 sequences (20000101 bp)...
-[0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 84704
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (2, 9787, 12, 6)
 [M::mem_pestat] skip orientation FF as there are not enough pairs
@@ -305,12 +305,13 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84704
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [M::mem_pestat] skip orientation RF
 [0000] 10. Calling kt_for - worker_sam
-[0000] 3. Calling kt_for - worker_aln
-	[0000][ M::mem_process_seqs] Processed 84704 reads in 9.142 CPU sec, 4.436 real sec
+	[0000][ M::mem_process_seqs] Processed 84704 reads in 10.720 CPU sec, 5.284 real sec
 [0000] 2. Calling mem_process_seqs.., task: 5
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000413, nseq: 84510
 	[0000][ M::kt_pipeline] read 84510 sequences (20000413 bp)...
+[0000] 3. Calling kt_for - worker_aln
+[0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 82740
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (12, 9090, 8, 6)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
@@ -327,12 +328,6 @@ Inferring insert size distribution from data, l_pac: 499949, n: 82740
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [M::mem_pestat] skip orientation FF
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 82740 reads in 9.779 CPU sec, 4.747 real sec
-[0000] 2. Calling mem_process_seqs.., task: 5
-[0000] 3. Calling kt_for - worker_bwt
-[0000] read_chunk: 20000000, work_chunk_size: 20000087, nseq: 82702
-	[0000][ M::kt_pipeline] read 82702 sequences (20000087 bp)...
-[0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 84664
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (3, 9996, 6, 2)
 [M::mem_pestat] skip orientation FF as there are not enough pairs
@@ -344,12 +339,18 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84664
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-[0000] 3. Calling kt_for - worker_aln
-	[0000][ M::mem_process_seqs] Processed 84664 reads in 8.985 CPU sec, 4.379 real sec
+	[0000][ M::mem_process_seqs] Processed 82740 reads in 11.524 CPU sec, 5.678 real sec
+[0000] 2. Calling mem_process_seqs.., task: 5
+[0000] 3. Calling kt_for - worker_bwt
+[0000] read_chunk: 20000000, work_chunk_size: 20000087, nseq: 82702
+	[0000][ M::kt_pipeline] read 82702 sequences (20000087 bp)...
+	[0000][ M::mem_process_seqs] Processed 84664 reads in 10.819 CPU sec, 5.364 real sec
 [0000] 2. Calling mem_process_seqs.., task: 6
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000084, nseq: 84310
 	[0000][ M::kt_pipeline] read 84310 sequences (20000084 bp)...
+[0000] 3. Calling kt_for - worker_aln
+[0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 82700
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (13, 9065, 8, 11)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
@@ -371,12 +372,6 @@ Inferring insert size distribution from data, l_pac: 499949, n: 82700
 [M::mem_pestat] skip orientation FF
 [M::mem_pestat] skip orientation RR
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 82700 reads in 9.844 CPU sec, 4.834 real sec
-[0000] 2. Calling mem_process_seqs.., task: 6
-[0000] 3. Calling kt_for - worker_bwt
-[0000] 3. Calling kt_for - worker_aln
-[0000] read_chunk: 20000000, work_chunk_size: 20000314, nseq: 82586
-	[0000][ M::kt_pipeline] read 82586 sequences (20000314 bp)...
 Inferring insert size distribution from data, l_pac: 499949, n: 84510
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (1, 9850, 5, 7)
 [M::mem_pestat] skip orientation FF as there are not enough pairs
@@ -388,11 +383,17 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84510
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84510 reads in 8.904 CPU sec, 4.322 real sec
+	[0000][ M::mem_process_seqs] Processed 82700 reads in 11.181 CPU sec, 5.454 real sec
+[0000] 2. Calling mem_process_seqs.., task: 6
+[0000] 3. Calling kt_for - worker_bwt
+[0000] read_chunk: 20000000, work_chunk_size: 20000314, nseq: 82586
+	[0000][ M::kt_pipeline] read 82586 sequences (20000314 bp)...
+	[0000][ M::mem_process_seqs] Processed 84510 reads in 10.051 CPU sec, 4.886 real sec
 [0000] 2. Calling mem_process_seqs.., task: 7
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000089, nseq: 84374
 	[0000][ M::kt_pipeline] read 84374 sequences (20000089 bp)...
+[0000] 3. Calling kt_for - worker_aln
 [0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 82702
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (12, 9000, 6, 15)
@@ -415,12 +416,6 @@ Inferring insert size distribution from data, l_pac: 499949, n: 82702
 [M::mem_pestat] skip orientation FF
 [M::mem_pestat] skip orientation RR
 [0000] 10. Calling kt_for - worker_sam
-[0000] 3. Calling kt_for - worker_aln
-	[0000][ M::mem_process_seqs] Processed 82702 reads in 9.447 CPU sec, 4.632 real sec
-[0000] 2. Calling mem_process_seqs.., task: 7
-[0000] 3. Calling kt_for - worker_bwt
-[0000] read_chunk: 20000000, work_chunk_size: 10416329, nseq: 42898
-	[0000][ M::kt_pipeline] read 42898 sequences (10416329 bp)...
 Inferring insert size distribution from data, l_pac: 499949, n: 84310
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8, 9659, 7, 4)
 [M::mem_pestat] skip orientation FF as there are not enough pairs
@@ -432,11 +427,17 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84310
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84310 reads in 9.173 CPU sec, 4.510 real sec
+	[0000][ M::mem_process_seqs] Processed 82702 reads in 11.593 CPU sec, 5.691 real sec
+[0000] 2. Calling mem_process_seqs.., task: 7
+[0000] 3. Calling kt_for - worker_bwt
+	[0000][ M::mem_process_seqs] Processed 84310 reads in 10.800 CPU sec, 5.260 real sec
 [0000] 2. Calling mem_process_seqs.., task: 8
 [0000] 3. Calling kt_for - worker_bwt
+[0000] read_chunk: 20000000, work_chunk_size: 10416329, nseq: 42898
+	[0000][ M::kt_pipeline] read 42898 sequences (10416329 bp)...
 [0000] read_chunk: 20000000, work_chunk_size: 20000288, nseq: 84392
 	[0000][ M::kt_pipeline] read 84392 sequences (20000288 bp)...
+[0000] 3. Calling kt_for - worker_aln
 [0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 82586
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (9, 9115, 5, 9)
@@ -449,11 +450,6 @@ Inferring insert size distribution from data, l_pac: 499949, n: 82586
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-[0000] 3. Calling kt_for - worker_aln
-	[0000][ M::mem_process_seqs] Processed 82586 reads in 9.503 CPU sec, 4.694 real sec
-[0000] 2. Calling mem_process_seqs.., task: 8
-[0000] 3. Calling kt_for - worker_bwt
-[0000] read_chunk: 20000000, work_chunk_size: 0, nseq: 0
 Inferring insert size distribution from data, l_pac: 499949, n: 84374
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (3, 9811, 8, 2)
 [M::mem_pestat] skip orientation FF as there are not enough pairs
@@ -465,12 +461,16 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84374
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-[0000] 3. Calling kt_for - worker_aln
-	[0000][ M::mem_process_seqs] Processed 84374 reads in 8.917 CPU sec, 4.321 real sec
+	[0000][ M::mem_process_seqs] Processed 82586 reads in 12.245 CPU sec, 6.085 real sec
+[0000] 2. Calling mem_process_seqs.., task: 8
+[0000] 3. Calling kt_for - worker_bwt
+[0000] read_chunk: 20000000, work_chunk_size: 0, nseq: 0
+	[0000][ M::mem_process_seqs] Processed 84374 reads in 12.627 CPU sec, 6.207 real sec
 [0000] 2. Calling mem_process_seqs.., task: 9
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000375, nseq: 84426
 	[0000][ M::kt_pipeline] read 84426 sequences (20000375 bp)...
+[0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 42898
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (7, 4699, 2, 9)
 [M::mem_pestat] skip orientation FF as there are not enough pairs
@@ -482,33 +482,33 @@ Inferring insert size distribution from data, l_pac: 499949, n: 42898
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 42898 reads in 5.094 CPU sec, 2.499 real sec
+	[0000][ M::mem_process_seqs] Processed 42898 reads in 6.345 CPU sec, 3.178 real sec
 [0000] read_chunk: 20000000, work_chunk_size: 0, nseq: 0
 [0000] Computation ends..
 No. of OMP threads: 2
-Processor is runnig @1800.161676 MHz
+Processor is runnig @1799.359354 MHz
 Runtime profile:
 
-	 Time taken for main_mem function: 35.92 Sec
+	 Time taken for main_mem function: 51.17 Sec
 
 	IO times (sec) :
-	Reading IO time (reads) avg: 0.94, (0.94, 0.94)
-	Writing IO time (SAM) avg: 0.86, (0.86, 0.86)
+	Reading IO time (reads) avg: 1.41, (1.41, 1.41)
+	Writing IO time (SAM) avg: 1.18, (1.18, 1.18)
 	Reading IO time (Reference Genome) avg: 0.00, (0.00, 0.00)
-	Index read time avg: 0.00, (0.00, 0.00)
+	Index read time avg: 0.01, (0.01, 0.01)
 
 	Overall time (sec) (Excluding Index reading time):
-	PROCESS() (Total compute time + (read + SAM) IO time) : 35.91
-	MEM_PROCESS_SEQ() (Total compute time (Kernel + SAM)), avg: 35.77, (35.77, 35.77)
+	PROCESS() (Total compute time + (read + SAM) IO time) : 51.16
+	MEM_PROCESS_SEQ() (Total compute time (Kernel + SAM)), avg: 51.00, (51.00, 51.00)
 
 	 SAM Processing time (sec):
-	--WORKER_SAM avg: 8.71, (8.71, 8.71)
+	--WORKER_SAM avg: 13.93, (13.93, 13.93)
 
 	Kernels' compute time (sec):
-	Total kernel (smem+sal+bsw) time avg: 26.96, (26.96, 26.96)
-		SMEM compute avg: 17.49, (17.52, 17.46)
-		SAL compute avg: 0.24, (0.24, 0.24)
-		BSW time, avg: 8.82, (8.83, 8.82)
+	Total kernel (smem+sal+bsw) time avg: 36.95, (36.95, 36.95)
+		SMEM compute avg: 23.77, (23.78, 23.76)
+		SAL compute avg: 0.29, (0.29, 0.29)
+		BSW time, avg: 12.38, (12.38, 12.37)
 
 	Total allocs: 210375 = 210375 out total requests: 397118, Rate: 0.53
 
@@ -522,9 +522,9 @@ Important parameter settings:
 	SIMD_WIDTH16 X: 16
 	AVG_SEEDS_PER_READ: 64
 
-Run with command: bwa-mem2 mem -t 2 /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19127720_1.fastq /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19127720_2.fastq > SRR19127720output_dir/best_map.sam
->samtools faidx passed
+Run with command: bwa-mem2 mem -t 2 /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19127720_1.fastq /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19127720_2.fastq > SRR19127720output_dir/best_map.sam
 [0000] 3. Calling kt_for - worker_aln
+>samtools faidx passed
 Inferring insert size distribution from data, l_pac: 499949, n: 84392
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4, 9718, 6, 4)
 [M::mem_pestat] skip orientation FF as there are not enough pairs
@@ -536,7 +536,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84392
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84392 reads in 8.542 CPU sec, 4.134 real sec
+	[0000][ M::mem_process_seqs] Processed 84392 reads in 10.641 CPU sec, 5.226 real sec
 [0000] 2. Calling mem_process_seqs.., task: 10
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000051, nseq: 84386
@@ -553,12 +553,12 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84426
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84426 reads in 7.917 CPU sec, 3.890 real sec
+	[0000][ M::mem_process_seqs] Processed 84426 reads in 9.437 CPU sec, 4.604 real sec
 [0000] 2. Calling mem_process_seqs.., task: 11
 [0000] 3. Calling kt_for - worker_bwt
->samtools view passed
 [0000] read_chunk: 20000000, work_chunk_size: 20000202, nseq: 84386
 	[0000][ M::kt_pipeline] read 84386 sequences (20000202 bp)...
+>samtools view passed
 [0000] 3. Calling kt_for - worker_aln
 Inferring insert size distribution from data, l_pac: 499949, n: 84386
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (3, 9629, 5, 4)
@@ -571,7 +571,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84386
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84386 reads in 7.846 CPU sec, 3.830 real sec
+	[0000][ M::mem_process_seqs] Processed 84386 reads in 9.902 CPU sec, 4.861 real sec
 [0000] 2. Calling mem_process_seqs.., task: 12
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000408, nseq: 84250
@@ -588,12 +588,12 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84386
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
->samtools sort passed
-	[0000][ M::mem_process_seqs] Processed 84386 reads in 7.950 CPU sec, 3.879 real sec
+	[0000][ M::mem_process_seqs] Processed 84386 reads in 9.894 CPU sec, 4.850 real sec
 [0000] 2. Calling mem_process_seqs.., task: 13
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000268, nseq: 84168
 	[0000][ M::kt_pipeline] read 84168 sequences (20000268 bp)...
+>samtools sort passed
 >samtools index passed
 >Time for mpileup step:
 [mpileup] 1 samples in 1 input files
@@ -610,7 +610,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84250
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84250 reads in 7.848 CPU sec, 3.845 real sec
+	[0000][ M::mem_process_seqs] Processed 84250 reads in 9.214 CPU sec, 4.504 real sec
 [0000] 2. Calling mem_process_seqs.., task: 14
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000374, nseq: 83994
@@ -627,7 +627,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84168
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84168 reads in 7.939 CPU sec, 3.878 real sec
+	[0000][ M::mem_process_seqs] Processed 84168 reads in 9.570 CPU sec, 4.696 real sec
 [0000] 2. Calling mem_process_seqs.., task: 15
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 15879270, nseq: 66426
@@ -644,7 +644,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 83994
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 83994 reads in 7.879 CPU sec, 3.848 real sec
+	[0000][ M::mem_process_seqs] Processed 83994 reads in 9.278 CPU sec, 4.560 real sec
 [0000] 2. Calling mem_process_seqs.., task: 16
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 0, nseq: 0
@@ -660,33 +660,33 @@ Inferring insert size distribution from data, l_pac: 499949, n: 66426
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 66426 reads in 6.265 CPU sec, 3.111 real sec
+	[0000][ M::mem_process_seqs] Processed 66426 reads in 7.537 CPU sec, 3.754 real sec
 [0000] read_chunk: 20000000, work_chunk_size: 0, nseq: 0
 [0000] Computation ends..
 No. of OMP threads: 2
-Processor is runnig @1800.141492 MHz
+Processor is runnig @1799.398979 MHz
 Runtime profile:
 
-	 Time taken for main_mem function: 65.37 Sec
+	 Time taken for main_mem function: 85.26 Sec
 
 	IO times (sec) :
-	Reading IO time (reads) avg: 1.99, (1.99, 1.99)
-	Writing IO time (SAM) avg: 1.71, (1.71, 1.71)
+	Reading IO time (reads) avg: 2.81, (2.81, 2.81)
+	Writing IO time (SAM) avg: 2.56, (2.56, 2.56)
 	Reading IO time (Reference Genome) avg: 0.00, (0.00, 0.00)
-	Index read time avg: 0.00, (0.00, 0.00)
+	Index read time avg: 0.01, (0.01, 0.01)
 
 	Overall time (sec) (Excluding Index reading time):
-	PROCESS() (Total compute time + (read + SAM) IO time) : 65.37
-	MEM_PROCESS_SEQ() (Total compute time (Kernel + SAM)), avg: 65.21, (65.21, 65.21)
+	PROCESS() (Total compute time + (read + SAM) IO time) : 85.25
+	MEM_PROCESS_SEQ() (Total compute time (Kernel + SAM)), avg: 85.06, (85.06, 85.06)
 
 	 SAM Processing time (sec):
-	--WORKER_SAM avg: 12.49, (12.49, 12.49)
+	--WORKER_SAM avg: 17.95, (17.95, 17.95)
 
 	Kernels' compute time (sec):
-	Total kernel (smem+sal+bsw) time avg: 52.55, (52.55, 52.55)
-		SMEM compute avg: 34.77, (34.81, 34.73)
-		SAL compute avg: 0.47, (0.47, 0.47)
-		BSW time, avg: 16.48, (16.49, 16.48)
+	Total kernel (smem+sal+bsw) time avg: 66.89, (66.89, 66.89)
+		SMEM compute avg: 44.57, (44.59, 44.56)
+		SAL compute avg: 0.58, (0.58, 0.57)
+		BSW time, avg: 20.74, (20.76, 20.72)
 
 	Total allocs: 421443 = 421443 out total requests: 783220, Rate: 0.54
 
@@ -700,7 +700,7 @@ Important parameter settings:
 	SIMD_WIDTH16 X: 16
 	AVG_SEEDS_PER_READ: 64
 
-Run with command: bwa-mem2 mem -t 2 /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19310037_1.fastq /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19310037_2.fastq > SRR19310037output_dir/best_map.sam
+Run with command: bwa-mem2 mem -t 2 /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19310037_1.fastq /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19310037_2.fastq > SRR19310037output_dir/best_map.sam
 >samtools faidx passed
 >Dropping duplicate positions
 ERR1067710	912	.	GCATTCT	G	0	.	INDEL;IDV=1;IMF=0.0078125;DP=128;I16=71,56,0,1,9033,1.30728e+06,57,3249,6069,321523,12,144,2692,64356,25,625;QS=0.997311,0.00268877;VDB=0.923073;SGB=-0.379885;MQSB=0.976996;MQ0F=0	PL	0,255,255
@@ -3241,10 +3241,10 @@ Gap_found
 
 
 Extensiphy directory is /home/ejmctavish/projects/McTavishLab/extensiphy/modules
-Alignment is /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
+Alignment is /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
 num threads is
 2
-master dir == /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo
+master dir == /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh
 tail_1 is _1.fastq
 tail_2 is _2.fastq
 Argument out is SRR19310038output_dir
@@ -3261,7 +3261,7 @@ Running in Paired-End Mode
 -----------------------------
 Executing in AVX2 mode!!
 -----------------------------
-Ref file: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
+Ref file: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
 Entering FMI_search
 reference seq len = 999899
 count
@@ -3271,12 +3271,12 @@ count
 3,	766819
 4,	999899
 
-Reading other elements of the index from files /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
-prefix: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas
+Reading other elements of the index from files /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
+prefix: /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas
 [M::bwa_idx_load_ele] read 0 ALT contigs
 Done reading Index!!
 Reading reference genome..
-Binary seq file = /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas.0123
+Binary seq file = /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas.0123
 Reference genome size: 999898 bp
 Done readng reference genome !!
 
@@ -3308,7 +3308,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84552
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84552 reads in 7.593 CPU sec, 3.777 real sec
+	[0000][ M::mem_process_seqs] Processed 84552 reads in 9.193 CPU sec, 4.572 real sec
 [0000] 2. Calling mem_process_seqs.., task: 1
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000006, nseq: 84634
@@ -3325,7 +3325,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84570
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84570 reads in 8.139 CPU sec, 4.002 real sec
+	[0000][ M::mem_process_seqs] Processed 84570 reads in 9.365 CPU sec, 4.571 real sec
 [0000] 2. Calling mem_process_seqs.., task: 2
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000003, nseq: 84624
@@ -3342,7 +3342,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84634
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84634 reads in 8.355 CPU sec, 4.094 real sec
+	[0000][ M::mem_process_seqs] Processed 84634 reads in 9.561 CPU sec, 4.674 real sec
 [0000] 2. Calling mem_process_seqs.., task: 3
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000239, nseq: 84442
@@ -3364,7 +3364,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84624
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [M::mem_pestat] skip orientation RF
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84624 reads in 7.940 CPU sec, 3.904 real sec
+	[0000][ M::mem_process_seqs] Processed 84624 reads in 9.572 CPU sec, 4.669 real sec
 [0000] 2. Calling mem_process_seqs.., task: 4
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000407, nseq: 84700
@@ -3381,7 +3381,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84442
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84442 reads in 8.193 CPU sec, 4.021 real sec
+	[0000][ M::mem_process_seqs] Processed 84442 reads in 9.499 CPU sec, 4.676 real sec
 [0000] 2. Calling mem_process_seqs.., task: 5
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000087, nseq: 84586
@@ -3398,7 +3398,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84700
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84700 reads in 8.136 CPU sec, 3.996 real sec
+	[0000][ M::mem_process_seqs] Processed 84700 reads in 9.620 CPU sec, 4.716 real sec
 [0000] 2. Calling mem_process_seqs.., task: 6
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000275, nseq: 84324
@@ -3415,7 +3415,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84586
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84586 reads in 8.083 CPU sec, 3.972 real sec
+	[0000][ M::mem_process_seqs] Processed 84586 reads in 9.679 CPU sec, 4.747 real sec
 [0000] 2. Calling mem_process_seqs.., task: 7
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000024, nseq: 84448
@@ -3437,7 +3437,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84324
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [M::mem_pestat] skip orientation RF
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84324 reads in 8.048 CPU sec, 3.944 real sec
+	[0000][ M::mem_process_seqs] Processed 84324 reads in 9.651 CPU sec, 4.742 real sec
 [0000] 2. Calling mem_process_seqs.., task: 8
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000205, nseq: 84208
@@ -3454,7 +3454,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84448
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84448 reads in 7.016 CPU sec, 3.447 real sec
+	[0000][ M::mem_process_seqs] Processed 84448 reads in 9.732 CPU sec, 4.766 real sec
 [0000] 2. Calling mem_process_seqs.., task: 9
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000078, nseq: 84190
@@ -3471,7 +3471,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84208
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84208 reads in 7.011 CPU sec, 3.437 real sec
+	[0000][ M::mem_process_seqs] Processed 84208 reads in 9.938 CPU sec, 4.884 real sec
 [0000] 2. Calling mem_process_seqs.., task: 10
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000478, nseq: 84154
@@ -3488,7 +3488,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84190
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84190 reads in 6.785 CPU sec, 3.326 real sec
+	[0000][ M::mem_process_seqs] Processed 84190 reads in 9.598 CPU sec, 4.660 real sec
 [0000] 2. Calling mem_process_seqs.., task: 11
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000101, nseq: 84336
@@ -3505,7 +3505,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84154
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84154 reads in 7.035 CPU sec, 3.448 real sec
+	[0000][ M::mem_process_seqs] Processed 84154 reads in 9.654 CPU sec, 4.723 real sec
 [0000] 2. Calling mem_process_seqs.., task: 12
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000268, nseq: 84164
@@ -3522,7 +3522,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84336
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84336 reads in 6.906 CPU sec, 3.384 real sec
+	[0000][ M::mem_process_seqs] Processed 84336 reads in 9.454 CPU sec, 4.649 real sec
 [0000] 2. Calling mem_process_seqs.., task: 13
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000430, nseq: 84076
@@ -3539,7 +3539,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84164
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84164 reads in 6.879 CPU sec, 3.371 real sec
+	[0000][ M::mem_process_seqs] Processed 84164 reads in 9.930 CPU sec, 4.868 real sec
 [0000] 2. Calling mem_process_seqs.., task: 14
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 20000432, nseq: 84004
@@ -3556,7 +3556,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84076
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84076 reads in 6.890 CPU sec, 3.377 real sec
+	[0000][ M::mem_process_seqs] Processed 84076 reads in 9.845 CPU sec, 4.760 real sec
 [0000] 2. Calling mem_process_seqs.., task: 15
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 7505295, nseq: 31452
@@ -3573,7 +3573,7 @@ Inferring insert size distribution from data, l_pac: 499949, n: 84004
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 84004 reads in 6.796 CPU sec, 3.358 real sec
+	[0000][ M::mem_process_seqs] Processed 84004 reads in 9.532 CPU sec, 4.714 real sec
 [0000] 2. Calling mem_process_seqs.., task: 16
 [0000] 3. Calling kt_for - worker_bwt
 [0000] read_chunk: 20000000, work_chunk_size: 0, nseq: 0
@@ -3589,33 +3589,33 @@ Inferring insert size distribution from data, l_pac: 499949, n: 31452
 [M::mem_pestat] skip orientation RF as there are not enough pairs
 [M::mem_pestat] skip orientation RR as there are not enough pairs
 [0000] 10. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 31452 reads in 2.542 CPU sec, 1.258 real sec
+	[0000][ M::mem_process_seqs] Processed 31452 reads in 3.745 CPU sec, 1.843 real sec
 [0000] read_chunk: 20000000, work_chunk_size: 0, nseq: 0
 [0000] Computation ends..
 No. of OMP threads: 2
-Processor is runnig @1799.585384 MHz
+Processor is runnig @1799.232627 MHz
 Runtime profile:
 
-	 Time taken for main_mem function: 60.26 Sec
+	 Time taken for main_mem function: 77.37 Sec
 
 	IO times (sec) :
-	Reading IO time (reads) avg: 1.48, (1.48, 1.48)
-	Writing IO time (SAM) avg: 1.31, (1.31, 1.31)
+	Reading IO time (reads) avg: 2.14, (2.14, 2.14)
+	Writing IO time (SAM) avg: 1.93, (1.93, 1.93)
 	Reading IO time (Reference Genome) avg: 0.00, (0.00, 0.00)
 	Index read time avg: 0.01, (0.01, 0.01)
 
 	Overall time (sec) (Excluding Index reading time):
-	PROCESS() (Total compute time + (read + SAM) IO time) : 60.25
-	MEM_PROCESS_SEQ() (Total compute time (Kernel + SAM)), avg: 60.11, (60.11, 60.11)
+	PROCESS() (Total compute time + (read + SAM) IO time) : 77.37
+	MEM_PROCESS_SEQ() (Total compute time (Kernel + SAM)), avg: 77.23, (77.23, 77.23)
 
 	 SAM Processing time (sec):
-	--WORKER_SAM avg: 11.79, (11.79, 11.79)
+	--WORKER_SAM avg: 15.46, (15.46, 15.46)
 
 	Kernels' compute time (sec):
-	Total kernel (smem+sal+bsw) time avg: 48.15, (48.15, 48.15)
-		SMEM compute avg: 32.03, (32.05, 32.01)
-		SAL compute avg: 0.41, (0.41, 0.41)
-		BSW time, avg: 14.92, (14.93, 14.91)
+	Total kernel (smem+sal+bsw) time avg: 61.57, (61.57, 61.57)
+		SMEM compute avg: 41.35, (41.40, 41.30)
+		SAL compute avg: 0.48, (0.49, 0.48)
+		BSW time, avg: 18.76, (18.76, 18.75)
 
 	Total allocs: 397290 = 397290 out total requests: 736569, Rate: 0.54
 
@@ -3629,7 +3629,7 @@ Important parameter settings:
 	SIMD_WIDTH16 X: 16
 	AVG_SEEDS_PER_READ: 64
 
-Run with command: bwa-mem2 mem -t 2 /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo/best_ref.fas /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19310038_1.fastq /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19310038_2.fastq > SRR19310038output_dir/best_map.sam
+Run with command: bwa-mem2 mem -t 2 /home/ejmctavish/Desktop/COME/COME2022/Neisseria_demo/EP_demo_fresh/best_ref.fas /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19310038_1.fastq /home/ejmctavish/Desktop/Mole2022/neisseria_demo/neisseria_reads/SRR19310038_2.fastq > SRR19310038output_dir/best_map.sam
 >samtools faidx passed
 >samtools view passed
 >samtools sort passed

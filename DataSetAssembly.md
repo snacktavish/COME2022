@@ -6,28 +6,16 @@
 
 We will compare sequences assmebled from short read data using a few different parameter choices, and assess accuracy of the consensus sequence, and of the phylogenetic inferences.
 
-Clone the git repo containing the data files to your computer using 
-    ```
+
+Clone the exercise repo and cd into the directory for this example if you havn't aleady done so:
+
     git clone git@github.com:snacktavish/sequence_data_exercise.git
-    ```
+    cd Neisseria_demo
 
 
-## Learning objectives:
-    -
-    -
-    -
 
 
 ## Background
-The simulated data were generated using [TreeToReads](https://github.com/snacktavish/TreeToReads) [McTavish et al. 2017](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1592-1).
-
-
-
-[Extensiphy](https://github.com/McTavishLab/extensiphy.git) is a tool for updating an existing multiple sequence alignment [Field et al. 2022](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13790). Extensiphy works by taking an input alignment, and assembling homologous loci from raw short read data.
-
-For more info on how to use Extensiphy, see https://github.com/snacktavish/Mole2022/blob/master/TreeUpdating.md and https://github.com/McTavishLab/extensiphy/blob/main/tutorial/extensiphy_tutoria.md
-
-
 We are going to investigate three newly published sequences of gonorrhea.
 
 The [SRR19310037](https://www.ncbi.nlm.nih.gov/sra/SRX15370312[accn]) and [SRR19310038](https://www.ncbi.nlm.nih.gov/sra/SRX15370313[accn]) were just added to NCBI's sequence read archive (SRA) on May 27, 2022!
@@ -59,22 +47,26 @@ https://www.ncbi.nlm.nih.gov/pathogens/tree/#Neisseria/PDG000000032.278/PDS00010
 We will add these sequences to an existing core genome alignment generated using [ParSNP](https://harvest.readthedocs.io/en/latest/content/parsnp.html), and Extensiphy, published [Field et al 2022](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13790) and the alignment stored in Dryad [data deposit](https://datadryad.org/stash/dataset/doi:10.6071/M38T0T)
 
 
-*I have run the assembly and subsampled the alignment from 1200 lineages to 30, and cut the sequences down to 500K BP to make inference faster for this demo. To see how to run this from raw data, see https://github.com/snacktavish/Mole2022/blob/master/TreeUpdating.md)*
+[Extensiphy](https://github.com/McTavishLab/extensiphy.git) is a tool for updating an existing multiple sequence alignment [Field et al. 2022](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13790). Extensiphy works by taking an input alignment, and assembling homologous loci from raw short read data.
+
+For more info on how to use Extensiphy, see https://github.com/snacktavish/Mole2022/blob/master/TreeUpdating.md and https://github.com/McTavishLab/extensiphy/blob/main/tutorial/extensiphy_tutoria.md
+
+
+*I have run the assembly and subsampled the alignment from 1200 lineages to 30, and cut the sequences down to 100K BP to make inference faster for this demo. To see how to run this from raw data, see https://github.com/snacktavish/Mole2022/blob/master/TreeUpdating.md)*
 
 
 
-** The updated allignment is in  FILE TODO**
+The starting alignment is in neisseria_aln.fas
 
-The  ML tree file will be in the file `EP_demo_1/RESULTS/RAxML_bestTree.consensusFULL`
+The updated alignment is in EP_demo/RESULTS/extended.aln 
 
-Transfer it to your computer, and open it in figtree
+The ML tree file is in the file `EP_demo/RESULTS/RAxML_bestTree.consensusFULL`
+
+Open it in figtree
 Root it with "ERR2525602" as an outgroup.
 
-By default, EP uses RaxmlHPC to estimate ML phylogenies - but the updated alignemnet is saved as output_dir/RESULTS/extended.aln, which you can use to estimate a phylogeny using any method.
 
-
-
-The new taxa we have added were sampled in the last month - whereas the existing tips are from 2019 or earlier.
+The new taxa we have added were sampled in the last two months - whereas the existing tips are from 2019 or earlier.
 
 **Q** *Are our new sequences (SRR19310037, SRR19310038, and SRR19127720) closely related in the ML tree?*
 
@@ -109,28 +101,28 @@ In your pre-workshop exercises, you developed a script to compare sequences in f
 Use that script now to investigate how these sequences differ !
 
 
+**Q Does changing the reference taxon change the sequences?**
 
 
-**Q** *Does changing the reference taxon change the sequences?*
+**Q Are consensus sequences from differnet taxa ?**
 
 
 We can then combine the previous extended alignemnt with these new, slightly different consensus sequence estimates.
 
-Open each of your newly estimated sequences in a text editor (e.g. nano), and rename them to reflect that you used an alternate reference.
+Open each of the consensus sequences from the alternate reference in a text editor, and rename them to reflect that you used an alternate reference.
 
 e.g. change ">SRR19310037" to  ">SRR19310037_alt"
 
 Because they are already aligned, we can just concateneate them to form an alignment that includes both our original consesuses for these taxa, and these new inferences.
 
-```
-cat EP_demo_1/RESULTS/extended.aln EP_demo_alternate_ref/combine_and_infer/SRR19310037_align.fas EP_demo_alternate_ref/combine_and_infer/SRR19310038_align.fas EP_demo_alternate_ref/combine_and_infer/SRR19127720_align.fas > combined_refs.fas
-```
+
+    cat EP_demo_1/RESULTS/extended.aln EP_demo_alternate_ref/combine_and_infer/SRR19310037_align.fas EP_demo_alternate_ref/combine_and_infer/SRR19310038_align.fas EP_demo_alternate_ref/combine_and_infer/SRR19127720_align.fas > combined_refs.fas
+
 
 We can then estimate a tree on this updated alignment - e.g. using RAxML (or any other phylogenetic inference software)
 
-```
-    raxmlHPC -s combined_refs.fas -m GTRGAMMA -p 1 -n compare_references 
-```
+
+    raxml-ng -msa combined_refs.fas -model GTR+G -prefix compare_references 
 
 Your ML tree will be saved as RAxML_bestTree.compare_references. Take a look at it in figtree.
 
