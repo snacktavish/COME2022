@@ -1,23 +1,36 @@
 # Ascertainment Bias Exercise
-Simulated data can be a great way to investigate model misspecification and biases. This exercise uses a data set simulated on a Felsenstein Zone tree. Data was simulated using seq-gen
+Simulated data can be a great way to investigate model misspecification and biases. This exercise uses a data set simulated on a tree with some short branches, and high rate variation among lineages (a hard tree to estimate correctly). Data was simulated using seq-gen (http://tree.bio.ed.ac.uk/software/seqgen/).
 
 
-Many datasets are enriched for variable sites, or include exclusively alignment columns with variable sites, i.e. Single nucleotide polymorphism (SNP) data. This is an example of 'ascertainment bias'. 
-The data that you have 'ascertained' and included in your alignment are not a random subset of the genome. This does not include invariant sites. 
-If the data if pruned to sites with only two states, you have removed sites at which repeated mutations have resulted in the same base at the tips (homoplasy).
+Many analysis pipelines enriched datasets for variable sites, or include exclusively alignment columns with variable sites, e.g. Single nucleotide polymorphism (SNP) data. This is an example of 'ascertainment bias'. 
+The data that you have 'ascertained' and included in your alignment are not a random subset of the genome. They does not include invariant sites. 
+If the data if pruned to sites with only two states, you have also removed sites at which repeated mutations have resulted in the same base at the tips (homoplasy).
 
 ## Part 1: tree inference
 
-Take a look at the true tree -   the tree that the data was simulated on datafiles/sim.tre
-This is a tree shape that makes correct topologies particularly hard to estimate - the "Felsenstein Zone" (read more about this at ????)
+
+Clone the exercise repo and cd into the directory for this example if you havn't aleady done so:
+
+    git clone git@github.com:snacktavish/sequence_data_exercise.git
+    cd sequence_data_exercise/asc_bias_exercise
+
+
+Take a look at the true tree -   the tree that the data was simulated on true_tree.tre
+This is a tree shape that makes correct topologies particularly hard to estimate.
 
 
 Lets take a simulated data set based on that tree, that has not been subject to any ascertainment bias.
 The alignment is in the file asc_bias_exercise/sim_noasc.phy, and estimate a tree:
 
-```
-raxmlHPC -m GTRGAMMA -p 2 -s  asc_bias_exercise/datafiles/sim_noasc.phy -n  asc_bias_exercise/no_asc_bias
-```
+Depending on your version of raxml, run either:
+
+   raxmlHPC -m GTRGAMMA -p 2 -s  sim_noasc.phy -n  no_asc_bias 
+
+or 
+
+    raxml-ng -model GTR+G -msa  sim_noasc.phy
+
+
 
 
 Open the ML tree in a tree viewer 
@@ -25,24 +38,32 @@ Compare the topology of the best tree estimate to the true tree.
 
 **Q. Did you estimate the correct topology?**
 
+**Q. How do the branch lengths compare to the true tree (sim.tre)?**
 
 Now lets run that same analysis on only the variable sites from that alignment, sim_variablesites.phy. This is the exact same alignment, but with the invariant columns removed.
 
-```
-raxmlHPC -m GTRGAMMA -p 2 -s datafiles/sim_variablesites.phy -n asc_uncorrected
-```
+
+    raxml-ng -model GTR+G -msa  sim_variablesites.phy
+OR
+    raxmlHPC -m GTRGAMMA -p 2 -s sim_variablesites.phy -n asc_uncorrected
+
 
 **Q. Did you get the correct topology?**
-**Q. How do the branch lengths differ from the true tree?**
+**Q. How do the branch lengths compare to the true tree (sim.tre)**
 
 
 Lets bootstrap it!
 
-```
-raxmlHPC -m GTRGAMMA -p 123 -# 100 -b 123 -s datafiles/sim_variablesites.phy -n asc_uncorr_boot
 
-raxmlHPC -m GTRGAMMA -f b -t RAxML_bestTree.asc_uncorrected -z RAxML_bootstrap.asc_uncorr_boot -n asc_uncorr_bipart
-```
+    raxml-ng -model GTR+G -msa  sim_variablesites.phy -bootstrap 100
+    raxml-ng --support --tree variable_sites.raxml.bestTree --bs-trees variable_sites.raxml.bootstraps
+
+OR 
+    raxmlHPC -m GTRGAMMA -p 123 -# 100 -b 123 -s sim_variablesites.phy -n asc_uncorr_boot
+    raxmlHPC -m GTRGAMMA -f b -t RAxML_bestTree.asc_uncorrected -z RAxML_bootstrap.asc_uncorr_boot -n asc_uncorr_bipart
+
+
+
 
 **Q: What is the bootstrap support for the one bipartition in the tree? (You can open it in figtree, but with such a simple tree you can also just look at the text file directly)**
 
@@ -50,17 +71,20 @@ raxmlHPC -m GTRGAMMA -f b -t RAxML_bestTree.asc_uncorrected -z RAxML_bootstrap.a
 
 However, even if you only have the variable sites, by using an appropriate model of evolution, it is possible to rescue your analysis. In RAxML you can you a model corrected for ascertainment bias by using a model corrected for these known biases. We will use th ASC_GTRGAMMA model, with the lewis (as in Paul Lewis) correction for discarding sites that don't vary in the alignment.
 
-```
-raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -s datafiles/sim_variablesites.phy -n asc_corrected
-```
+
+    raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -s datafiles/sim_variablesites.phy -n asc_corrected
+
 
 **Q: Did you get the correct tree?**
 
 Bootstrap it!
-```
-raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -# 100 -b 123 -s datafiles/sim_variablesites.phy -n asc_corr_boot
-raxmlHPC -m ASC_GTRGAMMA -f b -t RAxML_bestTree.asc_corrected -z RAxML_bootstrap.asc_corr_boot -n asc_corr_bipart
-```
+
+    raxml-ng -model GTR+G -msa  sim_variablesites.phy -bootstrap 100
+
+
+   raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -# 100 -b 123 -s datafiles/sim_variablesites.phy -n asc_corr_boot
+   raxmlHPC -m ASC_GTRGAMMA -f b -t RAxML_bestTree.asc_corrected -z RAxML_bootstrap.asc_corr_boot -n asc_corr_bipart
+
 
 **Q: What is the bootstrap support for the one bipartition in the tree?**
 **Q: Is that bipartition in the true tree?**
