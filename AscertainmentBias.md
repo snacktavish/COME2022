@@ -82,10 +82,9 @@ Bootstrap it!
 
     raxml-ng --model GTR+G+ASC_LEWIS --msa  variable_sites.fas --msa-format fasta --bootstrap --prefix corrected
     raxml-ng --support --tree corrected.raxml.bestTree --bs-trees corrected.raxml.bootstraps
-OR   
-
-   raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -# 100 -b 123 -s variable_sites.fas -n asc_corr_boot
-   raxmlHPC -m ASC_GTRGAMMA -f b -t RAxML_bestTree.corrected -z RAxML_bootstrap.asc_corr_boot -n asc_corr_bipart
+OR  
+    raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -# 100 -b 123 -s variable_sites.fas -n asc_corr_boot
+    raxmlHPC -m ASC_GTRGAMMA -f b -t RAxML_bestTree.corrected -z RAxML_bootstrap.asc_corr_boot -n asc_corr_bipart
 
 
 **Q: What is the bootstrap support for the one bipartition in the tree?**  
