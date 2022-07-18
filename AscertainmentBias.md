@@ -82,14 +82,14 @@ Bootstrap it!
 
     raxml-ng --model GTR+G+ASC_LEWIS --msa  variable_sites.fas --msa-format fasta --bootstrap --prefix corrected
     raxml-ng --support --tree corrected.raxml.bestTree --bs-trees corrected.raxml.bootstraps
-OR 
+OR   
 
-   raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -# 100 -b 123 -s datafiles/sim_variablesites.phy -n asc_corr_boot
-   raxmlHPC -m ASC_GTRGAMMA -f b -t RAxML_bestTree.asc_corrected -z RAxML_bootstrap.asc_corr_boot -n asc_corr_bipart
+   raxmlHPC -m ASC_GTRGAMMA --asc-corr lewis -p 2 -# 100 -b 123 -s variable_sites.fas -n asc_corr_boot
+   raxmlHPC -m ASC_GTRGAMMA -f b -t RAxML_bestTree.corrected -z RAxML_bootstrap.asc_corr_boot -n asc_corr_bipart
 
 
-**Q: What is the bootstrap support for the one bipartition in the tree?**
-**Q: Is that bipartition in the true tree?**
+**Q: What is the bootstrap support for the one bipartition in the tree?**  
+**Q: Is that bipartition in the true tree?**  
 
 If our model of evolution is not appropriate for our data, our results can be systematically biased. Incorrect inferences can have 100% bootstrap support, because sampling across our data does not capture the problem.
 NOTE: The ascertainment bias corrections in RAxML will not run if there are ANY invariant columns in your alignment.
