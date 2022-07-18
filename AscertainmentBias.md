@@ -28,6 +28,7 @@ Depending on your version of raxml, run either:
 
     raxml-ng -model GTR+G -msa all_sites.fas --prefix all_sites
 OR 
+
     raxmlHPC -m GTRGAMMA -p 2 -s  all_sites.fas -n all_sites
 
 

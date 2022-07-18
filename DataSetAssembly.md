@@ -115,16 +115,9 @@ Because they are already aligned, we can just concateneate them to form an align
 
 We can then estimate a tree on this updated alignment - e.g. using RAxML (or any other phylogenetic inference software)
 
-
     raxml-ng -msa combined_refs.fas -model GTR+G -prefix compare_references 
 
 Take a look at your ML tree in figtree.
 
 **Q Does changing the reference taxon change the phylogeny or inferences you would make from it?**
-
-
-
-
-
-
 
