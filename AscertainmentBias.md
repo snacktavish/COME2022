@@ -119,6 +119,12 @@ Use seaview to look at the data in the alignment.
 
 Use muscle to align the data in the variable sites alignment. 
 
+(new version)
+
+    muscle -align variable_sites_mini.fas -output variable_sites_realign.fas
+
+OR
+
     muscle -in variable_sites_mini.fas -out variable_sites_realign.fas
 
 
