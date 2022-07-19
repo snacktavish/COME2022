@@ -91,7 +91,7 @@ The consensus aligned sequence for each run is saved in combine_and_infer/seqnam
 
 In your pre-workshop exercises, you developed a script to compare sequences in fasta files.
 
-Use that script now to investigate how these sequences differ !
+Use that script now to investigate how these sequences differ between assemblies! (or concatenate them, and open them in seqview, and eyeball it)
 
 
 **Q Does changing the reference taxon change the inferred sequences?**
