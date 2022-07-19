@@ -4,7 +4,7 @@
 
 ## Description
 
-We will compare sequences assmebled from short read data using a few different parameter choices, and assess accuracy of the consensus sequence, and of the phylogenetic inferences.
+We will compare sequences assembled from short read data using a few different parameter choices, and assess accuracy of the consensus sequence, and of the phylogenetic inferences.
 
 
 Clone the exercise repo and cd into the directory for this example if you havn't aleady done so:
@@ -50,7 +50,6 @@ For more info on how to use Extensiphy, see https://github.com/snacktavish/Mole2
 
 
 *I have run the assembly and subsampled the alignment from 1200 lineages to 30, and cut the sequences down to 100K BP to make inference faster for this demo. To see how to run this from raw data, see https://github.com/snacktavish/Mole2022/blob/master/TreeUpdating.md)*
-
 
 The starting alignment is in neisseria_aln.fas.
 The updated alignment is in EP_demo/RESULTS/extended.aln 
@@ -117,7 +116,9 @@ We can then estimate a tree on this updated alignment - e.g. using RAxML (or any
 
     raxml-ng -msa combined_refs.fas -model GTR+G -prefix compare_references 
 
-Take a look at your ML tree in figtree.
+Take a look at your ML tree in figtree. (what model would you use?)
+
 
 **Q Does changing the reference taxon change the phylogeny or inferences you would make from it?**
+
 
