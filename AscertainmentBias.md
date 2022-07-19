@@ -11,7 +11,7 @@ If the data if pruned to sites with only two states, you have also removed sites
 
 Clone the exercise repo and cd into the directory for this example if you havn't aleady done so:
 
-    git clone git@github.com:snacktavish/sequence_data_exercise.git
+    git clone https://github.com/snacktavish/sequence_data_exercise
     cd sequence_data_exercise/asc_bias_exercise
 
 
@@ -118,6 +118,12 @@ Use seaview to look at the data in the alignment.
 
 
 Use muscle to align the data in the variable sites alignment. 
+
+(new version)
+
+    muscle -align variable_sites_mini.fas -output variable_sites_realign.fas
+
+OR
 
     muscle -in variable_sites_mini.fas -out variable_sites_realign.fas
 
