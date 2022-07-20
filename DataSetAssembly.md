@@ -54,7 +54,8 @@ For more info on how to use Extensiphy, see https://github.com/snacktavish/Mole2
 The starting alignment is in neisseria_aln.fas.
 The updated alignment is in EP_demo/RESULTS/extended.aln 
 
-The ML tree file is in the file `EP_demo/RESULTS/RAxML_bestTree.consensusFULL`
+Estimate an ML tree using raxml
+
 
 Open it in figtree
 Root it with "ERR2525602" as an outgroup.
