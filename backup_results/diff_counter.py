@@ -15,14 +15,14 @@ def fasta_as_string(filename):
     seq = ''
     for lin in fi.readlines():
         if lin.startswith('>'):
-            pass
+            name = lin.strip()
         else:
             seq = seq+lin.strip()
-    return seq
+    return name, seq
 
 
-seq1 = fasta_as_string(seqfi1)
-seq2 = fasta_as_string(seqfi2)
+name1, seq1 = fasta_as_string(seqfi1)
+name2, seq2 = fasta_as_string(seqfi2)
 
 
 print("Sequence {f1} is {l1} bp".format(f1=sys.argv[1],l1=len(seq1)))
@@ -40,10 +40,19 @@ print("The sequences differ at {d} sites".format(d=len(diff_dict)))
 
 bases=set(['a','t','g','c'])
 not_gap_diff = 0
-for diff in diff_dict.values():
+
+differences = open("differences.csv", "w")
+
+keylist = list(diff_dict.keys())
+keylist.sort()
+
+for i in keylist:
+    diff = diff_dict[i]
     if set(diff).issubset(bases):
         not_gap_diff += 1
+    differences.write("{i}, {b1}, {b2}\n".format(i=i, b1=diff[0], b2=diff[1]))
+
+differences.close()
 
 print("Of those {d} sites, {ng} are not a gap or an ambiguity code in one taxon".format(d=len(diff_dict), ng=not_gap_diff))
-
 
