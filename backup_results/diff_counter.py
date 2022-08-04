@@ -24,7 +24,7 @@ def fasta_as_string(filename):
 
 
 
-def compare_basecalls(seqfi1, seqfi2, unambiguous_only=True):
+def compare_basecalls(seqfi1, seqfi2, unambiguous_only=True, outfilename="differences.csv"):
     name1, seq1 = fasta_as_string(seqfi1)
     name2, seq2 = fasta_as_string(seqfi2)
 
@@ -51,7 +51,7 @@ def compare_basecalls(seqfi1, seqfi2, unambiguous_only=True):
 
     not_gap_diff = 0
 
-    differences = open("differences.csv", "w")
+    differences = open(outfilename, "w")
     differences.write("location,{},{}".format(name1, name2))
 
     keylist = list(diff_dict.keys())
@@ -84,8 +84,8 @@ def compare_diff_dicts(diff_dict1, diff_dict2):
 
 
 
-true_vs_sample_dict = compare_basecalls(true, sample)
-sample_vs_ref_dict = compare_basecalls(ref, sample)
+true_vs_sample_dict = compare_basecalls(true, sample, outfilename = "true_vs_sample.csv")
+sample_vs_ref_dict = compare_basecalls(ref, sample,  outfilename = "ref_vs_sample.csv")
 
 comparison = compare_diff_dicts(true_vs_sample_dict, sample_vs_ref_dict)
 print(comparison)
